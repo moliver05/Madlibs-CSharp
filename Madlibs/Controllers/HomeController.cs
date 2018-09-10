@@ -5,17 +5,25 @@ namespace Madlibs.Controllers
 {
     public class HomeController : Controller
     {
-      [Route("/madlibs")]
-      public ActionResult Madlibs()
-      {
-              LetterVariable myLetterVariable = new LetterVariable();
-              myLetterVariable.SetRecipient(Request.Query["person"]);
-              myLetterVariable.SetSender(Request.Query["personTwo"]);
-              myLetterVariable.SetRecipient(Request.Query["animal"]);
-              myLetterVariable.SetSender(Request.Query["verb"]);
-              myLetterVariable.SetRecipient(Request.Query["noun"]);
 
-              return View("Hello", myLetterVariable);
-            }
+    [Route("/")]
+    public ActionResult Form()
+    {
+      return View();
+    }
+
+    [Route("/madlibs_form")]
+    public ActionResult Madlibs()
+    {
+      LetterVariable myLetterVariable = new LetterVariable();
+      myLetterVariable.SetPerson(Request.Query["person"]);
+      myLetterVariable.SetPersonTwo(Request.Query["personTwo"]);
+      myLetterVariable.SetAnimal(Request.Query["animal"]);
+      myLetterVariable.SetVerb(Request.Query["verb"]);
+      myLetterVariable.SetNoun(Request.Query["noun"]);
+      myLetterVariable.SetExpression(Request.Query["expression"]);
+
+      return View("Story", myLetterVariable);
+    }
   }
  }

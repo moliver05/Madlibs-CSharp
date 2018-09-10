@@ -7,13 +7,14 @@ namespace Madlibs.Models
   private string _animal;
   private string _verb;
   private string _noun;
+  private string _expression;
 
   public string GetPerson()
   {
     return _person;
   }
 
-  public void SetPerson()
+  public void SetPerson(string newPerson)
   {
     _person = newPerson;
   }
@@ -23,9 +24,9 @@ namespace Madlibs.Models
     return _personTwo;
   }
 
-  public void SetPerson()
+  public void SetPersonTwo(string newPersonTwo)
   {
-    _person = newPersonTwo;
+    _personTwo = newPersonTwo;
   }
 
   public string GetAnimal()
@@ -33,7 +34,7 @@ namespace Madlibs.Models
     return _animal;
   }
 
-  public void SetAnimal()
+  public void SetAnimal(string newAnimal)
   {
     _animal = newAnimal;
   }
@@ -45,7 +46,7 @@ namespace Madlibs.Models
 
   public void SetNoun(string newNoun)
   {
-    _nouns = newNoun;
+    _noun = newNoun;
   }
 
   public string GetVerb()
@@ -56,6 +57,15 @@ namespace Madlibs.Models
   public void SetVerb(string newVerb)
   {
     _verb = newVerb;
+  }
+  public string GetExpression()
+  {
+    return _expression;
+  }
+
+  public void SetExpression(string newExpression)
+  {
+    _expression = newExpression;
   }
  }
 }
