@@ -1,13 +1,21 @@
 using Microsoft.AspNetCore.Mvc;
+using Madlibs.Models;
 
-namespace FriendLetter.Controllers
+namespace Madlibs.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("/")]
-        public ActionResult Journal()
-        {
-          return View();
-        }
+      [Route("/madlibs")]
+      public ActionResult Madlibs()
+      {
+              LetterVariable myLetterVariable = new LetterVariable();
+              myLetterVariable.SetRecipient(Request.Query["person"]);
+              myLetterVariable.SetSender(Request.Query["personTwo"]);
+              myLetterVariable.SetRecipient(Request.Query["animal"]);
+              myLetterVariable.SetSender(Request.Query["verb"]);
+              myLetterVariable.SetRecipient(Request.Query["noun"]);
+
+              return View("Hello", myLetterVariable);
+            }
   }
-}
+ }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FriendLetter
+namespace Madlibs
 {
     public class Startup
     {
@@ -33,7 +33,7 @@ namespace FriendLetter
             });
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Welcome!");
             });
         }
     }
